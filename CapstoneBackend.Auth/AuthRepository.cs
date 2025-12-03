@@ -5,6 +5,7 @@ using Dapper.Contrib.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using MySqlConnector;
+using static System.Net.WebRequestMethods;
 
 
 namespace CapstoneBackend.Auth;
@@ -63,3 +64,4 @@ internal class AuthRepository : IAuthRepository
         return await connection.QuerySingleOrDefaultAsync<DatabaseUser>(query, new {email = email});
     }
 }
+
